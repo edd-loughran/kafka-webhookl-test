@@ -27,9 +27,14 @@ while producer is None:
 def healthcheck():
     return {"status": "running"}
 
-@app.post("/webhook")
+@app.post("/user")
 async def webhook(request: Request):
     payload = await request.json()
-    producer.send("webhooks", payload)
+    key = payload.get("email")
+    producer.send(
+        "user",
+        value=payload,
+        key=key.encode("utf-8") if key else None,
+    )
     producer.flush()
     return {"status": "message sent"}

@@ -11,7 +11,7 @@ while consumer is None:
 
     try:
         consumer = KafkaConsumer(
-            "webhooks",
+            "user",
             bootstrap_servers="kafka:9092",
             auto_offset_reset="earliest",
             group_id="blob-consumers",
