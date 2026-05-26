@@ -1,0 +1,9 @@
+[project]
+name = "blob_consumer"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "kafka-python",
+    "sqlalchemy",
+    "psycopg[binary]"
+]
