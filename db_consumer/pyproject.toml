@@ -7,3 +7,6 @@ dependencies = [
     "sqlalchemy",
     "psycopg[binary]"
 ]
+
+[tool.setuptools.packages.find]
+include = ["models", "db_repositories"]
